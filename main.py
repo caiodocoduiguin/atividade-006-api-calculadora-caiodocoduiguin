@@ -11,12 +11,24 @@ def hello_world():
     return jsonify({
       'mensagem': "Por favor envie dois numeros, e a operação que deseja realizar.",
       'ajuda': "?numero1=X&numero2=X&operacao=X",
-      'operacoes': 'soma'
+      'operacoes': 'soma, subtração, multiplicação e divisão'
     })
   else:
     if operacao == 'soma':
       return jsonify({
         'resultado': int(numero_1) + int(numero_2)
+      })
+    elif operacao == 'subtração':
+      return jsonify({
+        'resultado': int(numero_1) - int(numero_2)
+      })
+    elif operacao == 'multiplicação':
+      return jsonify({
+        'resultado': int(numero_1) * int(numero_2)
+      })
+    elif operacao == 'dividir':
+      return jsonify({
+        'resultado': int(numero_1) / int(numero_2)
       })
     else:
       return jsonify({
